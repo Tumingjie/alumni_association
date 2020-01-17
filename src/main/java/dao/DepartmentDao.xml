@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.DepartmentDao">
+    <insert id="addDepartment" parameterType="Department">
+        insert into alumni_association.department_(dtName) values #{dtName}
+    </insert>
+
+    <select id="getDepartmentById" resultType="Department">
+        select * from alumni_association.department_ where dtId = #{dtId}
+    </select>
+
+    <delete id="deleteDepartmentById" parameterType="int">
+        delete from alumni_association.department_ where dtId = #{dtId}
+    </delete>
+
+    <update id="updateDepartment" parameterType="Department">
+        update alumni_association.department_ set dtName = #{dtName} where dtId = #{dtId}
+    </update>
+
+    <select id="listDepartment" resultType="Department">
+        select * from alumni_association.department_;
+    </select>
+
+
+</mapper>

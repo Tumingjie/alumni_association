@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.MediumDao">
+
+    <insert id="addMedium" parameterType="Medium">
+        insert into alumni_association.medium_(mName,mLink) values (#{mName},#{mLink});
+    </insert>
+
+    <select id="getMediumById" resultType="Medium">
+        select * from alumni_association.medium_ where mId = #{mId};
+    </select>
+
+    <delete id="deleteMediumById" parameterType="int">
+        delete from alumni_association.medium_ where mId = #{mId};
+    </delete>
+
+    <update id="updateMedium" parameterType="Medium">
+        update alumni_association.medium_ set mName = #{mName},mLink = #{mLink} where mId = #{mId};
+    </update>
+
+    <select id="listMedium" resultType="Medium">
+        select * from alumni_association.medium_;
+    </select>
+
+    <select id="listLink" resultType="String">
+        select mLink from alumni_association.medium_;
+    </select>
+
+</mapper>

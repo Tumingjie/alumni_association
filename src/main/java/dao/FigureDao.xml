@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.FigureDao">
+    <insert id="addFigure" parameterType="Figure">
+        insert into alumni_association.figure_(fName,fLink) values (#{fName},#{fLink});
+    </insert>
+
+    <select id="getFigureById" resultType="Figure">
+        select * from alumni_association.figure_ where fId = #{fId};
+    </select>
+
+    <delete id="deleteFigureById" parameterType="int">
+        delete from alumni_association.figure_ where fid = #{fId};
+    </delete>
+
+    <update id="updateFigure" parameterType="Figure">
+        update alumni_association.figure_ set fName = #{fName},fLink = #{fLink} where fId = #{fId};
+    </update>
+
+    <select id="listFigure" resultType="Figure">
+        select * from alumni_association.figure_;
+    </select>
+
+    <select id="listLink" resultType="String">
+        select fLink from alumni_association.figure_;
+    </select>
+</mapper>

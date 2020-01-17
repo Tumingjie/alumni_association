@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.HelpContentDao">
+    <insert id="addHelpContent" parameterType="HelpContent">
+        insert into alumni_association.help_content(fog_help,hcName,hcLink,hcDate) values (#{fog_help},#{hcName},#{hcLink},#{hcDate})
+    </insert>
+
+    <select id="getHelpContentById" resultType="HelpContent">
+        select * from alumni_association.help_content where hcId = #{hcId}
+    </select>
+
+    <delete id="deleteHelpContentById" parameterType="int">
+        delete from alumni_association.help_content where hcId = #{hcId}
+    </delete>
+
+    <update id="updateHelpContent" parameterType="HelpContent">
+        update alumni_association.help_content set fog_help = #{fog_help},hcName = #{hcName},hcLink = #{hcLink},hcDate = #{hcDate} where hcId = #{hcId}
+    </update>
+
+    <select id="listHelpContentByLink" resultType="HelpContent">
+        select * from alumni_association.help_content where fog_help = #{hcLink} order by hcDate desc lIMIT #{start},5
+    </select>
+
+    <select id="getCount" resultType="int">
+        select count(*) from  alumni_association.help_content where fog_help = #{methods}
+    </select>
+
+</mapper>

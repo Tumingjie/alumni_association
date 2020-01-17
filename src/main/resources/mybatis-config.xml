@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <typeAliases>
+        <package name="pojo"/>
+    </typeAliases>
+
+    <mappers>
+        <mapper resource="dao/AlumniDao.xml"></mapper>
+        <mapper resource="dao/AlumniContentDao.xml"></mapper>
+        <mapper resource="dao/DonateDao.xml"></mapper>
+        <mapper resource="dao/DonateContentDao.xml"></mapper>
+        <mapper resource="dao/FigureDao.xml"></mapper>
+        <mapper resource="dao/FigureContentDao.xml"></mapper>
+        <mapper resource="dao/HelpDao.xml"></mapper>
+        <mapper resource="dao/HelpContentDao.xml"></mapper>
+        <mapper resource="dao/MediumDao.xml"></mapper>
+        <mapper resource="dao/MediumContentDao.xml"></mapper>
+        <mapper resource="dao/NewsDao.xml"></mapper>
+        <mapper resource="dao/NewsContentDao.xml"></mapper>
+        <mapper resource="dao/StudentDao.xml"></mapper>
+        <mapper resource="dao/StudentContentDao.xml"></mapper>
+        <mapper resource="dao/DepartmentDao.xml"></mapper>
+    </mappers>
+</configuration>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.AlumniDao">
+    <insert id="addAlumni" parameterType="Alumni">
+        insert into alumni_association.alumni_(aName,aLink) values (#{aName},#{aLink});
+    </insert>
+
+    <select id="getAlumniById" resultType="Alumni">
+        select * from alumni_association.alumni_ where aId = #{aId};
+    </select>
+
+    <delete id="deleteAlumniById" parameterType="int">
+        delete from alumni_association.alumni_ where aId = #{aId};
+    </delete>
+
+    <update id="updateAlumni" parameterType="Alumni">
+        update alumni_association.alumni_ set aName = #{aName},aLink = #{aLink} where aId = #{aId};
+    </update>
+
+    <select id="listAlumni" resultType="Alumni">
+        select * from alumni_association.alumni_;
+    </select>
+
+    <select id="listLink" resultType="String">
+        select aLink from alumni_association.alumni_;
+    </select>
+</mapper>

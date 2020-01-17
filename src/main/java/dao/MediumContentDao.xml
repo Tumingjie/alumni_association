@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.MediumContentDao">
+    <insert id="addMediumContent" parameterType="MediumContent">
+        insert into alumni_association.medium_content(fog_medium,mcName,mcLink,mcDate) values (#{fog_medium},#{mcName},#{mcLink},#{mcDate})
+    </insert>
+
+    <select id="getMediumContentById" resultType="MediumContent">
+        select * from alumni_association.medium_content where mcId = #{mcId}
+    </select>
+
+    <delete id="deleteMediumContentById" parameterType="int">
+        delete from alumni_association.medium_content where mcId = #{mcId}
+    </delete>
+
+    <update id="updateMediumContent" parameterType="MediumContent">
+        update alumni_association.medium_content set fog_medium = #{fog_medium},mcName = #{mcName},mcLink = #{mcLink},mcDate = #{mcDate} where mcId = #{mcId}
+    </update>
+
+    <select id="listMediumContentByLink" resultType="MediumContent">
+        select * from alumni_association.medium_content where fog_medium = #{mcLink} order by mcDate desc lIMIT #{start},5
+    </select>
+
+    <select id="getCount" resultType="int">
+        select count(*) from  alumni_association.medium_content where fog_medium = #{methods}
+    </select>
+
+</mapper>

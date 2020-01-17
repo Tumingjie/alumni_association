@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.NewsDao">
+
+    <insert id="addNews" parameterType="News">
+        insert into alumni_association.news_(nName,nLink) values (#{nName},#{nLink});
+    </insert>
+
+    <select id="getNewsById" resultType="News">
+        select * from alumni_association.news_ where nId = #{nId};
+    </select>
+
+    <delete id="deleteNewsById" parameterType="int">
+        delete from alumni_association.news_ where nId = #{nId};
+    </delete>
+
+    <update id="updateNews" parameterType="News">
+        update alumni_association.news_ set nName = #{nName},nLink = #{nLink} where nId = #{nId};
+    </update>
+
+    <select id="listNews" resultType="News">
+        select * from alumni_association.news_;
+    </select>
+
+    <select id="listLink" resultType="String">
+        select nLink from alumni_association.news_;
+    </select>
+</mapper>

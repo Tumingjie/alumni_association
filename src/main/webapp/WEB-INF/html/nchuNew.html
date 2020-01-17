@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<html>
+	<head>
+		<link rel="stylesheet" href="../css/layui.css"  media="all">
+		<meta charset="utf-8">
+		<title>南昌航空大学校友会</title>
+		<style>
+			*{
+				margin: 0 auto;
+				padding: 0 auto;
+			}
+			
+			#top1{
+				width: 100%;
+				height: 30px;
+				border: 1px solid #000000;
+				background-color: #CDF5FD;
+				float: left;
+			}
+			.top1{
+				float: left;
+				margin-left: 30px;
+				margin-top: 4px;
+			}
+			a{
+				text-decoration: none;
+			}
+
+			
+			
+			#top2{
+				width: 100%;
+				height: 120px;
+				border: 1px solid #29D5A9;
+				display: block;
+				white-space: nowrap;
+				float: left;
+			}
+			#top2_image{
+				display: inline-block;
+				border: 1px solid #29D5A9;
+				margin-left: 110px;
+				float: left;
+			}
+			#top2_search{
+				display: inline-block;
+				border: 1px solid #29D5A9;
+				float: left;
+				margin-top: 60px;
+				margin-left: 300px;
+			}
+			#search_text{
+				width: 300px;
+				height: 40px;
+				border-radius: 18px;
+				outline: none;
+				border: 1px solid #ccc;
+				padding-left: 20px;
+				position: absolute;
+			}
+			#search_button{
+				height: 40px;
+				width: 50px;
+				margin-left: 257px;
+				margin-top:1px;
+				background-image:url("../images/search.png");
+				border: none;
+				outline: none;
+				cursor: pointer;
+				position: absolute;
+			}
+			
+			
+			
+			#top3{
+				width: 100%;
+				height: 40px;
+				border: 1px solid #A4E5FB;
+				background-color: #2B71C4;
+				text-align: center;
+				float: left;
+			}
+			
+			
+			
+			#left{
+				height:600px;
+				width: 150px;
+				border: 1px solid #D56464;
+				background-color: #EEEEEE;
+				float: left;
+			}
+			
+			
+			
+			#middle{
+				height:600px;
+				width: 1213.21px;
+				border: 1px solid #D56464;
+				float: left;
+			}
+			#middle_left{
+				height:600px;
+				width:300px;
+				border: 1px solid #D56464;
+				float: left;
+			}
+			#middle_right{
+				height:600px;
+				width:909px;
+				border: 1px solid #007DDB;
+				float: left;
+			}
+			
+			
+			
+			#right{
+				height:600px;
+				width: 150px;
+				border: 1px solid aquamarine;
+				background-color: #EEEEEE;
+				float: left;
+			}
+			#bottom1{
+				width: 100%;
+				height: 300px;
+				border: 1px solid #D56464;
+				float: left;
+			}
+			#bottom2{
+				width: 100%;
+				height: 60px;
+				border: 1px solid #D56464;
+				float: left;
+			}
+			
+
+	
+			
+			
+		</style>
+	</head>
+	<body>
+		<div id="top1">
+			<div id="top1_1">
+				<div class="top1">
+					<a href="http://www.nchu.edu.cn/"><font class="top1_font">南昌航空大学</font></a>
+				</div>
+				<div class="top1">
+					<a href="http://www.jxedu.gov.cn/"><font class="top1_font">江西高等教育网</font></a>
+				</div>
+				<div class="top1">
+					<a href="http://www.nchu.edu.cn/"><font class="top1_font">校友捐赠</font></a>
+				</div>
+			</div>
+		</div>
+		
+		<div id="top2">
+			<div id="top2_image">
+				<a href="index.hello.html">
+					<img src="../images/school.png"/>
+				</a>
+			</div>
+			<div id="top2_search">
+				<form>
+					<input id="search_text" type="text" placeholder="搜索"/>
+					<input id="search_button" type="submit" value=""/>
+				</form>
+			</div>
+		</div>
+		
+		<div id="top3">
+			<ul class="layui-nav layui-bg-blue">
+			
+				<li class="layui-nav-item"><a href="http://localhost:8080/news/whichNews?methods=justNews">新闻</a>
+					<dl class="layui-nav-child">
+					  <dd><a href="http://localhost:8080/news/whichNews?methods=newsFlash">校友会快讯</a></dd>
+					  <dd><a href="http://localhost:8080/news/whichNews?methods=schoolNews">校园新闻</a></dd>
+					  <dd><a href="http://localhost:8080/news/whichNews?methods=announce">通知预告</a></dd>
+					</dl>
+				</li>
+				<span><img src="../images/span.png"/></span>
+				<li class="layui-nav-item"><a href="javascript:;">校友会</font></a>
+					<dl class="layui-nav-child">
+					<dd><a href="">校友会简介</a></dd>
+					<dd><a href="">规章制度</a></dd>
+					<!--<dd class="layui-this"><a href="">选中项</a></dd>  选中项操作方法-->
+					</dl>
+				</li>
+				<span><img src="../images/span.png"/></span>
+				<li class="layui-nav-item "><a href="javascript:;">人物</a>
+					<dl class="layui-nav-child">
+					<dd><a href="">校友风采</a></dd>
+					<dd><a href="">行业精英</a></dd>
+					</dl>
+				</li>
+				<span><img src="../images/span.png"/></span>
+				<li class="layui-nav-item "><a href="javascript:;">捐赠</a>
+					<dl class="layui-nav-child">
+					<dd><a href="">捐赠平台</a></dd>
+					<dd><a href="">捐赠信息</a></dd>
+					</dl>
+				</li>
+				<span><img src="../images/span.png"/></span>
+				<li class="layui-nav-item "><a href="javascript:;">昌航人</a>
+					<dl class="layui-nav-child">
+					<dd><a href="">同学录</a></dd>
+					<dd><a href="">校园回忆</a></dd>
+					<dd><a href="">南航旧闻</a></dd>
+					</dl>
+				</li>
+				<span><img src="../images/span.png"/></span>
+				<li class="layui-nav-item "><a href="javascript:;">照片和视频</a>
+					<dl class="layui-nav-child">
+					<dd><a href="">照片</a></dd>
+					<dd><a href="">视频</a></dd>
+					</dl>
+				</li>
+				<span><img src="../images/span.png"/></span>
+				<li class="layui-nav-item "><a href="javascript:;">服务</a>
+					<dl class="layui-nav-child">
+					<dd><a href="">学校信息</a></dd>
+					<dd><a href="">投稿热线</a></dd>
+					</dl>
+				</li>
+			  
+			</ul>
+			
+		</div>
+		
+		<div id="left"></div>
+		
+		<div id="middle">
+			<div id="middle_left">
+				
+			</div>
+			<div id="middle_right">
+				
+			</div>
+		</div>
+		
+		<div id="right"></div>
+		
+		<div id="bottom1">
+			
+		</div>
+		
+		<div id="bottom2">
+			
+		</div>
+		
+		<script src="../js/layui.all.js" charset="utf-8"></script>
+		<script>
+		layui.use('element', function(){
+		  var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+		  //监听导航点击
+		  element.on('nav(demo)', function(elem){
+		    //console.log(elem)
+		    layer.msg(elem.text());
+		  });
+		});
+		</script>
+	</body>
+</html>

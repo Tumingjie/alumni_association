@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.NewsContentDao">
+
+    <insert id="addNewsContent" parameterType="NewsContent">
+        insert into alumni_association.news_content(fog_news,ncName,ncLink,ncDate) values (#{fog_news},#{ncName},#{ncLink},#{ncDate})
+    </insert>
+    
+    <select id="getNewsContentById" resultType="NewsContent">
+        select * from alumni_association.news_content where ncId = #{ncId}
+    </select>
+    
+    <delete id="deleteNewContentById" parameterType="int">
+        delete from alumni_association.news_content where ncId = #{ncId}
+    </delete>
+
+    <update id="updateNewsContent" parameterType="NewsContent">
+        update alumni_association.news_content set fog_news = #{fog_news},ncName = #{ncName},ncLink = #{ncLink},ncDate = #{ncDate} where ncId = #{ncId}
+    </update>
+    
+    <select id="listNewsContentByLink" resultType="NewsContent">
+        select * from alumni_association.news_content where fog_news = #{ncLink} order by ncDate desc lIMIT #{start},5
+    </select>
+
+    <select id="getCount" resultType="int">
+        select count(*) from  alumni_association.news_content where fog_news = #{methods}
+    </select>
+</mapper>

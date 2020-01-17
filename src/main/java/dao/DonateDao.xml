@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.DonateDao">
+    <insert id="addDonate" parameterType="Donate">
+        insert into alumni_association.donate_(dName,dLink) values (#{dName},#{dLink});
+    </insert>
+
+    <select id="getDonateById" resultType="Donate">
+        select * from alumni_association.donate_ where dId = #{dId};
+    </select>
+
+    <delete id="deleteDonateById" parameterType="int">
+        delete from alumni_association.donate_ where dId = #{dId};
+    </delete>
+
+    <update id="updateDonate" parameterType="Donate">
+        update alumni_association.donate_ set dName = #{dName},dLink=#{dLink} where dId = dId;
+    </update>
+
+    <select id="listDonate" resultType="Donate">
+        select * from alumni_association.donate_;
+    </select>
+
+    <select id="listLink" resultType="String">
+        select dLink from alumni_association.donate_;
+    </select>
+</mapper>

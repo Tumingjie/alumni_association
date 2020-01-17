@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.StudentContentDao">
+    <insert id="addStudentContent" parameterType="StudentContent">
+        insert into alumni_association.student_content(fog_student,scName,scLink,scDate) values (#{fog_student},#{scName},#{scLink},#{scDate})
+    </insert>
+
+    <select id="getStudentContentById" resultType="StudentContent">
+        select * from alumni_association.student_content where scId = #{scId}
+    </select>
+
+    <delete id="deleteStudentContentById" parameterType="int">
+        delete from alumni_association.student_content where scId = #{scId}
+    </delete>
+
+    <update id="updateStudentContent" parameterType="StudentContent">
+        update alumni_association.student_content set fog_student = #{fog_student},scName = #{scName},scLink = #{scLink},scDate = #{scDate} where scId = #{scId}
+    </update>
+
+    <select id="listStudentContentByLink" resultType="StudentContent">
+        select * from alumni_association.student_content where fog_student = #{scLink} order by scDate desc lIMIT #{start},5
+    </select>
+
+    <select id="getCount" resultType="int">
+        select count(*) from  alumni_association.student_content where fog_student = #{methods}
+    </select>
+
+</mapper>

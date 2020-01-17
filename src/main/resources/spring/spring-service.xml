@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--扫描包-->
+    <context:component-scan base-package="service,pojo"/>
+
+    <!--手动配置bean-->
+    <bean id="AlumniServiceImpl" class="service.impl.AlumniServiceImpl">
+        <property name="alumniDao" ref="alumniDao"></property>
+    </bean>
+
+    <bean id="DonateServiceImpl" class="service.impl.DonateServiceImpl">
+        <property name="donateDao" ref="donateDao"></property>
+    </bean>
+
+    <bean id="FigureServiceImpl" class="service.impl.FigureServiceImpl">
+        <property name="figureDao" ref="figureDao"></property>
+    </bean>
+
+    <bean id="HelpServiceImpl" class="service.impl.HelpServiceImpl">
+        <property name="helpDao" ref="helpDao"></property>
+    </bean>
+
+    <bean id="MediumServiceImpl" class="service.impl.MediumServiceImpl">
+        <property name="mediumDao" ref="mediumDao"></property>
+    </bean>
+
+    <bean id="NewsServiceImpl" class="service.impl.NewsServiceImpl">
+        <property name="newsDao" ref="newsDao"></property>
+    </bean>
+
+    <bean id="StudentServiceImpl" class="service.impl.StudentServiceImpl">
+        <property name="studentDao" ref="studentDao"></property>
+    </bean>
+
+    <bean id="NewsContentServiceImpl" class="service.impl.NewsContentServiceImpl">
+        <property name="newsContentDao" ref="newsContentDao"></property>
+    </bean>
+
+    <bean id="AlumniContentServiceImpl" class="service.impl.AlumniContentServiceImpl">
+        <property name="alumniContentDao" ref="alumniContentDao"></property>
+    </bean>
+
+    <bean id="DonateContentServiceImpl" class="service.impl.DonateContentServiceImpl">
+        <property name="donateContentDao" ref="donateContentDao"></property>
+    </bean>
+
+    <bean id="FigureContentServiceImpl" class="service.impl.FigureContentServiceImpl">
+        <property name="figureContentDao" ref="figureContentDao"></property>
+    </bean>
+
+    <bean id="HelpContentServiceImpl" class="service.impl.HelpContentServiceImpl">
+        <property name="helpContentDao" ref="helpContentDao"></property>
+    </bean>
+
+    <bean id="MediumContentServiceImpl" class="service.impl.MediumContentServiceImpl">
+        <property name="mediumContentDao" ref="mediumContentDao"></property>
+    </bean>
+
+    <bean id="StudentContentServiceImpl" class="service.impl.StudentContentServiceImpl">
+        <property name="studentContentDao" ref="studentContentDao"></property>
+    </bean>
+
+    <bean id="DepartmentServiceImpl" class="service.impl.DepartmentServiceImpl">
+        <property name="departmentDao" ref="departmentDao"></property>
+    </bean>
+
+    <bean id="ClassesServiceImpl" class="service.impl.ClassesServiceImpl">
+        <property name="classesDao" ref="classesDao"></property>
+    </bean>
+
+    <!--事务管理-->
+    <bean class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!--数据源-->
+        <property name="dataSource">
+            <ref bean="dataSource"/>
+        </property>
+    </bean>
+
+</beans>

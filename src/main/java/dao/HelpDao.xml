@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="dao.HelpDao">
+    <insert id="addHelp" parameterType="Help">
+        insert into alumni_association.help_(hName,hLink) values (#{hName},#{hLink});
+    </insert>
+
+    <select id="getHelpById" resultType="Help">
+        select * from alumni_association.help_ where hId = #{hId};
+    </select>
+
+    <delete id="deleteHelp" parameterType="int">
+        delete from alumni_association.help_ where hId = #{hId};
+    </delete>
+
+    <update id="updateHelp" parameterType="Help">
+        update alumni_association.help_ set hName = #{hName},hLink = #{hLink} where hId = #{hId};
+    </update>
+
+    <select id="listHelp" resultType="Help">
+        select * from alumni_association.help_;
+    </select>
+
+    <select id="listLink" resultType="String">
+        select hLink from alumni_association.help_;
+    </select>
+</mapper>
